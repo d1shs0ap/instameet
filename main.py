@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template, jsonify, redirect, url_for
+from flask import Flask,request, jsonify
 import json
 import requests
 import os
@@ -12,8 +12,8 @@ app = Flask(__name__)
 def home():
     return "Hello Shane!"
 
-@app.route("/response", methods=["POST"])
-def response():
+@app.route("/preresponse", methods=["POST"])
+def preresponse():
     from optimize_point import geometric_median
     firebase_call = requests.get("https://instameet-87f5c.firebaseio.com/.json").json()
 
@@ -31,6 +31,14 @@ def response():
     #destination = "Scotia Bank Plaza"
     #google_result = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&key=AIzaSyCHttcfy83akWGX0yXCX53DnrVN1anZFEM&alternatives=true").json()
     return firebase_call
+
+@app.route("/postresponse", methods=["POST"])
+def postresponse():
+    from sentimentanalysis import analyze_sentiment
+    userfeedback = request.get_json(force=True)['userfeedback'] #gets json file from being post requested
+    result = analyze_sentiment(userfeedback)
+    print(result)
+
 
 if __name__ == '__main__':  #only run if
    # this file is called directly
