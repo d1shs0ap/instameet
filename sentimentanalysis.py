@@ -31,7 +31,7 @@ def analyze_sentiment(text_content):
 
     response = client.analyze_sentiment(document, encoding_type=encoding_type)
     augmentedScore = response.document_sentiment.score*100
-    print(augmentedScore)
+    return augmentedScore
     # Get overall sentiment of the input document
     #print(u"Document sentiment score: {}".format(response.document_sentiment.score))
     # print(
@@ -49,7 +49,3 @@ def analyze_sentiment(text_content):
     # Get the language of the text, which will be the same as
     # the language specified in the request or, if not specified,
     # the automatically-detected language.
-    print(u"Language of the text: {}".format(response.language))
-
-str = ""
-sample_analyze_sentiment(str)
