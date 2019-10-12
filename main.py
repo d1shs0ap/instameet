@@ -11,6 +11,10 @@ app = Flask(__name__)
 def home():
     return "Hello Shane!"
 
+@app.route("/response", methods=["POST"])
+def response():
+    return jsonify({"Test": "Test1"})
+
 if __name__ == '__main__':  #only run if
    # this file is called directly
    app.run(debug=True)
