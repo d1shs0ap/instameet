@@ -12,7 +12,10 @@ def relaxed_nonANA(longitude, latitude):
 
     return long_lat, name, address
 
+#def quiet_pref():
 
 
 
-print(relaxed_nonANA(-79.702870, 43.474928))
+
+
+#print(relaxed_nonANA(-79.702870, 43.474928))

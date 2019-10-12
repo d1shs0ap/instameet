@@ -21,25 +21,32 @@ def preresponse():
     #getting the number of people who are going to be at the site
     number_of_people = firebase_call[list(firebase_call.keys())[0]]['NumberOfPeople']
 
+    #checking if there are enough datasets in the database
+    number_of_true = 0
+    for i in firebase_call:
+        if firebase_call[i]['Status'] == "True":
+            number_of_true += 1
+
     #list of longitudes and latitudes
     long_and_lat = []
     for i in firebase_call:
         long_and_lat.append([firebase_call[i]["Longitude"], firebase_call[i]["Latitude"]])
-
-    #checking if there are enough datasets in the database
-    if len(firebase_call) < 4:
+    
+    if number_of_people > number_of_true:
         #print(geometric_median(long_and_lat))
-        pass
+        return ('', 204)
     else:
         median = geometric_median(long_and_lat)
-    median = (median[0], median[1])
+        median = (median[0], median[1])
 
-    #the final location for where the people should meet
-    final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
+        #the final location for where the people should meet
+        #print(median, final_long_lat, name, address)
+        final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
 
-    #print(median, final_long_lat, name, address)
-    #checking the number of people
-    return jsonify({"final_long_lat": final_long_lat, 'name': name, 'address':address})
+        #updated the database
+        UPDATE = requests.patch("https://instameet-87f5c.firebaseio.com/27754/.json", json.dumps({"NumberOfPeople": 200}))
+        print(UPDATE)
+        return jsonify({"final_long_lat": final_long_lat, 'name': name, 'address':address})
 
 @app.route("/postresponse", methods=["POST"])
 def postresponse():
