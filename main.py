@@ -1,5 +1,6 @@
 from flask import Flask,request,render_template, jsonify, redirect, url_for
 import json
+import requests
 import os
 from werkzeug.utils import secure_filename
 
@@ -13,7 +14,11 @@ def home():
 
 @app.route("/response", methods=["POST"])
 def response():
-    return jsonify({"Test": "Test1"})
+    firebase_call = requests.get("https://instameet-87f5c.firebaseio.com/.json").json()
+    origin = "University of Toronto"
+    destination = "Scotia Bank Plaza"
+    google_result = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&key=AIzaSyCHttcfy83akWGX0yXCX53DnrVN1anZFEM&alternatives=true").json()
+    return firebase_call
 
 if __name__ == '__main__':  #only run if
    # this file is called directly
