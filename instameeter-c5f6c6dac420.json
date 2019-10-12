@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "instameeter",
+  "private_key_id": "c5f6c6dac42080642409d01e5d7fd67b12990818",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC3rzLa9YKL1L5x\nZ7ZcXdjypNgL68Rmx99coJHiQnBBV3l0gbDB1eYBLEfzhOs6io48CI4WAeXzMiWH\nZR8DSxGnq0TThjsDxDicMevJjpU+C876+7X0vUtuDel1pQkBa2aEhwcGMl4JLrLM\nml+po2L4QckmZfwx21uCGMxvK57Fg/Q26mZs79Wv3zvXGq0V3EHme03/K4k0cnnv\nLU6MT6TqYuN6yO8EK6MFBW0VBfvCdg5oVi1PcpPSu+GuJ/lfbHLhiglEeMtskQi7\nMjwwkxdRjm/aqMKHsZpRAb32881ptp5V6HszyBBOy8qmBr2LFsQKA5UtRvnGmUFF\nXeO8i7UNAgMBAAECggEABW39HZpUw8/j2kPT0OqoQ1Hqnf2X5mbhnCIV9d97ZH8S\ntMYxpKUvQZkevlzPPEGEv1MMaiufsb7pe5VaY5VIPhHSvMLywyN9feZ+3wwjLryY\nH3Sp1gRzcpsgK81XVQ6o7uFz7HO4MmLKP8CPc9sDza1aJhOtLwcaLyAPCPk73gBB\nziBWA+BCYY3EQKzX3Ej9OccT7Gi9Awm2E19xc9fqfyWw5IN4RsGfjtZZaEqH2h2w\nYmUW/WqyjxKqosWpfN7MaTUGYXJ/0KkALy2JQdz/ong6pTsFq+aGz67adI8CM7fe\n5jg+uPmcvDBSASIvOdhfLjn3uZObVy8nZQUtfxj5kQKBgQD/Ix2bNVVBAG0RHLXz\naGcz982v5T9NHKYHneT2zDcWvmW5eTKi67ah8CjUIkLjOtzbOu9bmCqs96W4odpn\nLzI3BS6CM/xh1nW66SGTmaD4NArTJvjxaORLWd0gr3JvLKrXiaVLWZnbhN3+Gdfz\nOhW5kEXSRlI7KZJYYQes9AarMQKBgQC4TjkRn4AeG+KmGBr7quZ3paCbjyXk1wzz\nrWtAnrafimpgp5SsVYWUfuNe4nNCuyFG/Pk4INdAHidpLhfRvxKV+9EXzRMGOXar\np1pONwo9DPKh9cVNthVEXbMdmtQGKokzYILjkyx+Wrh8TtePNc1V2hbVj9xoWYBG\nhwg2aqI4nQKBgEPz51vCTa2dXm8zVWa6BNq7gmX5ye1Q1wuqSyRMadO97DwFAq6P\n1zm0TDuL0ILS16XwQXYExkEBSHsvaIsY7+flkmiNTggE5aBdnVrBjTTuL3/jnmQ1\nyrAjBBlDgVgI7ouvln3GJItqDPIzkeevLcAZo+8IWbh2Lwso9LFk4S3RAoGAQ7oj\nCJHXT7kpkaWcDM1hgagwm9l/sFdCYC1jE0z/iSMhMkGCxc1rmAUE4rJObsA7W03M\n+04+K0apbuJMSHxxhQITdS6cBhaJwExwR/u73HFsnA2nooX9zLCuCHwD2/w3jNSz\nZJOJrykBUFTcq7i2qwzIhVQnR4VUORaX8v8+e5UCgYEAtHkemlN22gYTOMkuQWpp\nd6uoes6IAsq1xnTDS/6oBBA43jjLliK9G3yH5JKRf9rMJSOr1zWc85FtnR9ex4fD\nPwjHUSFN1JPwMjKlUYkHlV35ruQcMvQCpRZqpDkLJqq+ywE8TtPmDsRlUq2kKdat\niw0Bx6+fqn5qvHBNVnAhgB4=\n-----END PRIVATE KEY-----\n",
+  "client_email": "instameeter@appspot.gserviceaccount.com",
+  "client_id": "111505418604280282826",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/instameeter%40appspot.gserviceaccount.com"
+}
