@@ -44,8 +44,8 @@ def preresponse():
         final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
 
         #updated the database
-        UPDATE = requests.patch("https://instameet-87f5c.firebaseio.com/27754/.json", json.dumps({"NumberOfPeople": 200}))
-        print(UPDATE)
+        for i in firebase_call:
+            UPDATE = requests.patch("https://instameet-87f5c.firebaseio.com/" + i + "/.json", json.dumps({"Status": "False"}))
         return jsonify({"final_long_lat": final_long_lat, 'name': name, 'address':address})
 
 @app.route("/postresponse", methods=["POST"])
