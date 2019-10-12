@@ -14,10 +14,22 @@ def home():
 
 @app.route("/response", methods=["POST"])
 def response():
+    from optimize_point import geometric_median
     firebase_call = requests.get("https://instameet-87f5c.firebaseio.com/.json").json()
-    origin = "University of Toronto"
-    destination = "Scotia Bank Plaza"
-    google_result = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&key=AIzaSyCHttcfy83akWGX0yXCX53DnrVN1anZFEM&alternatives=true").json()
+
+    #list of longitudes and latitudes
+    long_and_lat = []
+    for i in firebase_call:
+        long_and_lat.append([firebase_call[i]["Longitude"], firebase_call[i]["Latitude"]])
+    #checking if there are enough datasets in the database
+    if len(firebase_call) <= 4:
+        print(geometric_median(long_and_lat))
+    else:
+        print(geometric_median(long_and_lat))
+        
+    #origin = "University of Toronto"
+    #destination = "Scotia Bank Plaza"
+    #google_result = requests.get("https://maps.googleapis.com/maps/api/directions/json?origin=" + origin + "&destination=" + destination + "&key=AIzaSyCHttcfy83akWGX0yXCX53DnrVN1anZFEM&alternatives=true").json()
     return firebase_call
 
 if __name__ == '__main__':  #only run if
