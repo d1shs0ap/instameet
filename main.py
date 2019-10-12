@@ -31,6 +31,7 @@ def preresponse():
     else:
         print(geometric_median(long_and_lat))
     
+    #checking the number of people
     print(number_of_people)
     #origin = "University of Toronto"
     #destination = "Scotia Bank Plaza"
