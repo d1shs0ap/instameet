@@ -65,8 +65,7 @@ def postresponse():
     userfeedback = request.get_json(force=True)['userfeedback'] #gets json file from being post requested
     result = analyze_sentiment(userfeedback)
 
-    #id = request.get_json(force=True)['id'] #this is the id of the user we want to add the feedback data to
-    id = "27754"
+    id = request.get_json(force=True)['id'] #this is the id of the user we want to add the feedback data to
     idnum = -1
 
     firebase_call = requests.get("https://instameet-87f5c.firebaseio.com/.json").json()
@@ -76,8 +75,6 @@ def postresponse():
             idnum = i
 
 
-
-    firebase_call = requests.get("https://instameet-87f5c.firebaseio.com/.json").json()
 
     #check which number id is in the list
 
