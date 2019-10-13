@@ -2,6 +2,7 @@ from flask import Flask,request, jsonify
 import json
 import requests
 import os
+import time
 from werkzeug.utils import secure_filename
 
 os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'instameeter-c5f6c6dac420.json'
@@ -38,15 +39,25 @@ def preresponse():
     else:
         median = geometric_median(long_and_lat)
         median = (median[0], median[1])
-
+        time.sleep(5)
         #the final location for where the people should meet
         #print(median, final_long_lat, name, address)
-        final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
+        if firebase_call[list(firebase_call.keys())[0]]['Looking'] == "Alcoholism":
+            final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
+        elif firebase_call[list(firebase_call.keys())[0]]['Looking'] == "PTSD":
+            final_long_lat, name, address = location_picker.quiet_perfered(median[0], median[1])
+        #add more choices here:
+        else:
+            final_long_lat, name, address = location_picker.relaxed_nonANA(median[0], median[1])
 
         #updated the database
         for i in firebase_call:
             UPDATE = requests.patch("https://instameet-87f5c.firebaseio.com/" + i + "/.json", json.dumps({"Status": "False"}))
+
+        
         return jsonify({"final_long_lat": final_long_lat, 'name': name, 'address':address})
+
+        #function for TESTING:
 
 @app.route("/postresponse", methods=["POST"])
 def postresponse():
