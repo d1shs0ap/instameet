@@ -63,7 +63,7 @@ def preresponse():
 def postresponse():
     from sentimentanalysis import analyze_sentiment
     userfeedback = request.get_json(force=True)['userfeedback'] #gets json file from being post requested
-    result = analyze_sentiment(userfeedback)
+    result = round(analyze_sentiment(userfeedback), 2)
 
     id = request.get_json(force=True)['id'] #this is the id of the user we want to add the feedback data to
     idnum = -1
